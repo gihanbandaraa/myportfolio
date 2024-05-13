@@ -31,7 +31,7 @@ const Projects = () => {
     sliderRef.current.slickPrev();
   }
   return (
-    <section className="project-container">
+    <section className="project-container" id="projects">
       <h5>Completed Projects</h5>
 
       <div className="project-content">

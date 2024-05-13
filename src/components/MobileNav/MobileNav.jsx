@@ -2,6 +2,16 @@ import React from "react";
 import "./MobileNav.css";
 
 const MobileNav = ({ isOpen, toggleMenu }) => {
+  const sendMessageOnWhatsApp = () => {
+    const phoneNumber = "+94782872802";
+    const message = "I'm interested in hiring you!";
+
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+    window.open(whatsappURL, "_blank");
+  };
+
   return (
     <>
       <div
@@ -24,7 +34,7 @@ const MobileNav = ({ isOpen, toggleMenu }) => {
             <li>
               <a className="menu-item">Contact Me</a>
             </li>
-            <button className="contact-btn" onClick={() => {}}>
+            <button className="contact-btn" onClick={sendMessageOnWhatsApp}>
               Hire Me
             </button>
           </ul>

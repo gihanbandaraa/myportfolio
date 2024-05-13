@@ -9,6 +9,25 @@ const Navbar = () => {
     setOpenMenu(!openMenu);
   };
 
+  const sendMessageOnWhatsApp = () => {
+    const phoneNumber = "+94782872802";
+    const message = "I'm interested in hiring you!";
+
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+    window.open(whatsappURL, "_blank");
+  };
+
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      const yOffset = -60; 
+      const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+    setOpenMenu(false); 
+  };
   return (
     <>
       <MobileNav isOpen={openMenu} toggleMenu={toggleMenu} />
@@ -22,18 +41,26 @@ const Navbar = () => {
 
           <ul>
             <li>
-              <a className="menu-item">Home</a>
+              <a className="menu-item" onClick={() => scrollToSection("hero")}>
+                Home
+              </a>
             </li>
             <li>
-              <a className="menu-item">Skills</a>
+              <a className="menu-item" onClick={() => scrollToSection("skills")}>
+                Skills
+              </a>
             </li>
             <li>
-              <a className="menu-item">Completed Projects</a>
+              <a className="menu-item" onClick={() => scrollToSection("projects")}>
+                Completed Projects
+              </a>
             </li>
             <li>
-              <a className="menu-item">Contact Me</a>
+              <a className="menu-item" onClick={() => scrollToSection("contact")}>
+                Contact Me
+              </a>
             </li>
-            <button className="contact-btn" onClick={() => {}}>
+            <button className="contact-btn" onClick={sendMessageOnWhatsApp}>
               Hire Me
             </button>
           </ul>

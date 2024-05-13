@@ -3,7 +3,7 @@ import "./Hero.css";
 
 function Hero() {
   return (
-    <section className="hero-container">
+    <section className="hero-container" id="hero">
       <div className="hero-content">
         <h2>Building the future, one line of code at a time</h2>
         <p>

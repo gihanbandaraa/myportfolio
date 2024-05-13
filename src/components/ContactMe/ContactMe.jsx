@@ -8,7 +8,7 @@ const ContactMe = () => {
     <section className="contact-container">
       <h5>Contact Me</h5>
 
-      <div className="contact-content">
+      <div className="contact-content" id="contact">
         <div style={{flex:1}}>
           <ContactInfoCard 
           iconUrl={"./assets/images/gmail .png"}
