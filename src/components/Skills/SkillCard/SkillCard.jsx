@@ -11,6 +11,7 @@ const SkillsCard = ({ title, iconUrl, isActive, onClick }) => {
         <img src={iconUrl} alt={title} />
       </div>
       <span>{title}</span>
+      
     </div>
   );
 };
